@@ -1,0 +1,16 @@
+name = "mk-vault"
+compatibility_date = "2026-08-18"
+pages_build_output_dir = "./dist"
+
+[[d1_databases]]
+binding = "VAULT_DB"
+database_name = "mk-vault"
+database_id = "5392f5cf-644a-4d00-bfab-83e875d0e183"
+
+[[r2_buckets]]
+binding = "VAULT_BACKUPS"
+bucket_name = "mk-vault-backups"
+
+[vars]
+OWNER_EMAIL = "mikakazano@gmail.com"
+# Set MK_VAULT_ADMIN_PASSWORD as a Pages secret. Do not commit its value.

@@ -1,0 +1,76 @@
+# Cloudflare R2 Enhancement Tasks
+
+- [x] Confirm the available Cloudflare R2 account access and the intended backup ownership model.
+- [x] Create a dedicated private Cloudflare R2 bucket for MK Vault versioned backups.
+- [x] Verify and document the R2 bucket privacy posture and versioned per-user backup object layout.
+- [x] Restore the fullstack upgrade to a compiling, running, authentication-capable state.
+- [x] Define and provision the R2 bucket and a versioned archive-backup object layout.
+- [x] Add secure backup and restore endpoints that never expose R2 credentials in the browser.
+- [x] Add MK Vault remote backup, restore, status, and failure-state controls.
+- [x] Verify local records can be backed up to and restored from R2, then save a delivery checkpoint.
+- [x] Confirm the Cloudflare-compatible authentication approach: owner sign-in with administrator role authorization.
+- [x] Add a public visitor mode that permits opening published project links without archive-management access.
+- [x] Protect archive add, edit, delete, import, export, and R2 backup operations behind administrator authorization.
+- [x] Verify visitor and administrator access paths, then save a secured delivery checkpoint.
+- [x] Add a public project collection that visitors can browse without signing in.
+- [x] Gate administrator management actions and R2 backup procedures by the owner administrator role.
+- [x] Add featured-order fields and administrator-only controls for public project ordering.
+- [x] Render featured records ahead of standard public records in a stable explicit order.
+- [x] Add a branded public-card loading treatment and accessible hover and focus motion.
+- [x] Verify featured ordering and public-card interactions, then save a delivery checkpoint.
+- [x] Verify the R2 bucket configuration, object key layout, and server-only credential boundary for link-list JSON backups.
+- [x] Run the JSON link-list R2 backup and restore validation without retaining verification objects.
+- [x] Report the verified R2 backup configuration and any relevant link-only limitations.
+- [x] Audit source files for visible AI/tooling attribution and identify references required by runtime integrations.
+- [x] Remove nonessential AI/tooling wording from user-facing project files without altering required runtime plumbing.
+- [x] Add a professional README, CONTRIBUTING guide, license, and GitHub-safe environment-variable documentation.
+- [x] Scan the export for exposed secrets and validate the cleaned application before creating a private GitHub repository.
+- [x] Create and push the cleaned private MK Vault GitHub repository.
+- [x] Improve saved-link cards with automatic preview-image and favicon fallback retrieval.
+- [x] Add accessible copy-link and browser-native share actions to project cards.
+- [x] Verify preview fallback, copying, and sharing behavior across public and administrator card views.
+- [x] Identify the malformed public-page response causing the “Unexpected token '<'” parsing error.
+- [x] Fix the failing response or asset path without altering saved link data or administrator access controls.
+- [x] Verify the public page reloads without console parsing errors.
+- [x] Defer the optional signed-in temporary-card check at the user’s request; automated link-action tests remain passing.
+- [x] Document that Cloudflare deployment needs a separate full-stack migration and is not a direct publish of the current Express application.
+- [x] Defer Cloudflare migration preparation while prioritizing the requested clean GitHub source push.
+- [x] Provide in-app publishing guidance instead of performing an external deployment.
+- [x] Apply a Royal Ledger scrollbar theme with usable track, thumb, hover, and dark-mode treatment.
+- [x] Verify the new scrollbar remains visible and usable across desktop and mobile layouts.
+- [x] Audit remaining visible platform/template traces and confirm no sensitive values are sent to public visitors.
+- [x] Remove nonessential visible platform wording and refine product copy and presentation.
+- [x] Add practical deterrents for casual text selection, drag, and context-menu copying without blocking accessibility controls.
+- [x] Verify public and administrator views retain usability while exposing only intentional public link data.
+- [x] Defer the formal keyboard, form, copy-link, and share browser check at the user’s request; automated link-action tests pass.
+- [x] Defer the signed-in administrator browser check because the shared test session remained signed out; type and production build validation pass.
+- [x] Validate the public catalog’s returned field contract excludes internal ownership and timestamp fields.
+- [x] Audit public and administrator copy that sounds like a third-party product rather than a personal workspace.
+- [x] Rewrite MK Vault interface copy in a concise first-person voice that sounds self-authored.
+- [x] Verify public and administrator pages retain clear, personal wording after the rewrite.
+- [x] Diagnose the authenticated `/admin` tRPC `Failed to fetch` error as a transient development-server disconnect; the server endpoint recovered and answered HTTP 200 after restart.
+- [x] Add bounded retry and reconnect recovery for only transient fetch failures across authentication, administrator, backup-status, and public catalog queries without retrying permission or application errors.
+- [x] Validate the repair with 14 passing tests, TypeScript, a production build, a clean server restart, HTTP 200 tRPC health check, and a rendered public collection.
+- [x] Use a scoped Cloudflare account token to complete account-level D1, R2 binding, Pages, and deployment operations after the browser connector could not perform API actions.
+- [x] Confirm the connected personal browser is authenticated to Lku199776@gmail.com’s Cloudflare account and can access the existing `mk-vault-backups` R2 bucket.
+- [x] Design a Cloudflare-native replacement for the local Express, OAuth, and managed database backend using Pages, Functions, D1, R2, and a no-billing owner-password session.
+- [x] Implement the Cloudflare Pages frontend and Functions API source with public browsing, D1-backed owner administration, R2 JSON backup/restore, signed owner sessions, and Royal Ledger assets.
+- [x] Replace Cloudflare D1 and administrator-authentication placeholders with actual D1/R2 bindings and a private Pages password secret.
+- [x] Replace the Zero Trust Access dependency with a no-billing owner authentication method; leave the card-authorization checkout unaccepted.
+- [x] Add a dedicated static `/admin/` SPA entry while leaving `/api/*` available to Pages Functions, and validate the generated route.
+- [x] Harden external-build copy and share actions with clipboard fallback, share cancellation handling, and user-visible feedback; type check and build pass.
+- [x] Replace the deployed `/admin` 308-to-root redirect with a dedicated static admin entry that preserves the administrator URL.
+- [x] Provision the D1 database, bind the existing R2 bucket, deploy the full Cloudflare Pages application, and validate public access plus anonymous-denied and owner-authorized administrator API sessions.
+- [x] Push the Cloudflare deployment source and configuration to the existing private GitHub repository.
+- [x] Verify the canonical live `/admin/` route preserves its URL and renders the owner password sign-in screen instead of redirecting to the public collection.
+- [x] Audit the private GitHub repository’s commit metadata, messages, description, topics, and documentation for visible AI or platform traces.
+- [x] Upgrade the repository description, homepage, topics, and README presentation without changing website code or runtime behavior; validation passes with 17 tests and both builds.
+- [x] Rewrite the private repository’s visible commit authorship and messages for the owner, removing nonessential AI/platform references.
+- [x] Force-update the private GitHub main branch and verify the cleaned remote history and repository presentation.
+- [x] Remove nonessential repository-facing platform references from tracked documentation, task records, and comments without changing the live Cloudflare website.
+- [x] Verify the final repository-facing docs, metadata, homepage, topics, and visible history no longer show avoidable AI or platform traces.
+- [x] Audit tracked source comments and remove nonessential platform wording while retaining unavoidable runtime identifiers and behavior.
+- [x] Record a final repository-wide trace audit: repository-facing documentation, metadata, history, and removable source comments are clean; only required internal runtime identifiers remain.
+- [x] Classify every remaining platform-named implementation identifier and remove nonessential ones: only legacy local-preview storage paths, local session keys, core runtime imports, host allow-list entries, and ignore rules remain; the live Cloudflare deployment contains none.
+- [x] Serve Royal Ledger artwork through a whitelisted Cloudflare Pages Function backed by the existing private R2 bucket, replacing external platform-named asset URLs; live PNG and JPEG responses return HTTP 200. Optional browser visual check was blocked by a browser-connector timeout.
+- [x] Record a full repository-wide trace audit: visible history, owner attribution, metadata, README, deployment docs, and Cloudflare source are clean; remaining names are required legacy local-runtime compatibility identifiers only.

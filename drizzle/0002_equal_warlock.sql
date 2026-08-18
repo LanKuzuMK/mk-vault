@@ -1,0 +1,1 @@
+ALTER TABLE `publicProjects` ADD `featuredRank` int DEFAULT 0 NOT NULL;

@@ -1,0 +1,157 @@
+/* MK Vault / Royal Ledger: obsidian ground, antique brass hierarchy, restrained ember energy. */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.12 0.012 296);
+  --foreground: oklch(0.94 0.014 80);
+  --card: oklch(0.17 0.015 296);
+  --card-foreground: oklch(0.94 0.014 80);
+  --popover: oklch(0.18 0.014 296);
+  --popover-foreground: oklch(0.94 0.014 80);
+  --primary: oklch(0.7 0.105 77);
+  --primary-foreground: oklch(0.16 0.01 65);
+  --secondary: oklch(0.23 0.014 296);
+  --secondary-foreground: oklch(0.78 0.016 80);
+  --muted: oklch(0.22 0.012 296);
+  --muted-foreground: oklch(0.66 0.018 296);
+  --accent: oklch(0.27 0.025 75);
+  --accent-foreground: oklch(0.94 0.014 80);
+  --destructive: oklch(0.62 0.2 32);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.72 0.09 77 / 22%);
+  --input: oklch(0.72 0.09 77 / 24%);
+  --ring: oklch(0.7 0.105 77);
+}
+
+* { border-color: var(--border); }
+html { background: #0b0a10; scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--background); color: var(--foreground); font-family: "Manrope", sans-serif; }
+button:not(:disabled), [role="button"]:not([aria-disabled="true"]), [type="button"]:not(:disabled), [type="submit"]:not(:disabled), a[href], select:not(:disabled), input:not(:disabled) { cursor: pointer; }
+
+/* Royal Ledger scrollbar: functional contrast first, with a restrained brass inlay. */
+html {
+  scrollbar-color: #aa8338 #0b0a10;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar { width: 14px; height: 14px; background: #0b0a10; }
+::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #0b0a10, #15121a 52%, #0b0a10);
+  border-left: 1px solid rgba(201, 162, 75, 0.15);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.025), inset -1px 0 0 rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  min-height: 46px;
+  border: 4px solid #0b0a10;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #dfc37b 0%, #aa8338 48%, #73511f 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 243, 206, 0.28), 0 0 10px rgba(201, 162, 75, 0.12);
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #f1d98e 0%, #c9a24b 52%, #8d682a 100%); }
+::-webkit-scrollbar-thumb:active { background: #e8590c; }
+::-webkit-scrollbar-corner { background: #0b0a10; }
+@media (pointer: coarse) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { border-width: 3px; min-height: 40px; }
+}
+
+.container { width: 100%; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+.flex { min-height: 0; min-width: 0; }
+@media (min-width: 640px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
+@media (min-width: 1024px) { .container { max-width: 1280px; padding-left: 2rem; padding-right: 2rem; } }
+
+.vault-shell {
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  background:
+    radial-gradient(circle at 92% 3%, rgba(232, 89, 12, 0.075), transparent 20rem),
+    radial-gradient(circle at 0% 63%, rgba(201, 162, 75, 0.055), transparent 26rem),
+    #0b0a10;
+}
+.vault-shell input, .vault-shell textarea, .vault-shell select, .vault-shell [contenteditable="true"] { -webkit-user-select: text; user-select: text; }
+.vault-wordmark, .vault-display { font-family: "Cinzel", Georgia, serif; }
+.vault-mono { font-family: "JetBrains Mono", monospace; }
+.vault-hero {
+  position: relative;
+  isolation: isolate;
+  background-image:
+    linear-gradient(90deg, rgba(11, 10, 16, 0.97) 0%, rgba(11, 10, 16, 0.89) 46%, rgba(11, 10, 16, 0.42) 100%),
+    linear-gradient(0deg, #0b0a10 0%, transparent 52%),
+    url("/manus-storage/mk-vault-masthead_35ef1d73.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.vault-hero::after {
+  position: absolute; z-index: -1; inset: 0; content: ""; opacity: 0.36;
+  background-image: radial-gradient(rgba(243, 238, 227, 0.2) 0.55px, transparent 0.55px);
+  background-size: 4px 4px; mask-image: linear-gradient(to bottom, black, transparent 86%); pointer-events: none;
+}
+.vault-rule { height: 1px; background: linear-gradient(90deg, transparent, rgba(201, 162, 75, 0.8), transparent); }
+.vault-input {
+  border: 1px solid rgba(201, 162, 75, 0.2) !important; border-radius: 0 !important; background: rgba(7, 6, 10, 0.72) !important;
+  color: #f3eee3 !important; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+.vault-input::placeholder { color: #77727f; }
+.vault-input:focus { border-color: rgba(201, 162, 75, 0.75) !important; }
+.vault-card {
+  position: relative; overflow: hidden; border: 1px solid rgba(201, 162, 75, 0.16); background: linear-gradient(145deg, rgba(29, 27, 36, 0.98), rgba(16, 14, 21, 0.98));
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18); transition: border-color 180ms cubic-bezier(0.23, 1, 0.32, 1), transform 180ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.vault-card:focus-visible { outline: 2px solid #c9a24b; outline-offset: 3px; }
+.vault-card::before { position: absolute; z-index: 2; inset: 6px; border: 1px solid rgba(201, 162, 75, 0.08); content: ""; pointer-events: none; }
+.vault-card-thumb { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: linear-gradient(135deg, rgba(11, 10, 16, 0.18), rgba(11, 10, 16, 0.82)), url("/manus-storage/mk-vault-fallback-tile_ac296a2d.jpg") center / cover; }
+.vault-card-thumb::after { position: absolute; inset: 0; content: ""; background: linear-gradient(to top, rgba(10, 9, 14, 0.68), transparent 55%); pointer-events: none; }
+.vault-card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 200ms ease; }
+.public-vault-card--featured { border-color: rgba(223, 195, 123, 0.56); box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(223, 195, 123, 0.06); }
+.public-card-visit { transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1), color 180ms ease; }
+.public-card-skeleton { position: relative; overflow: hidden; border: 1px solid rgba(201, 162, 75, 0.16); background: linear-gradient(145deg, rgba(29, 27, 36, 0.98), rgba(16, 14, 21, 0.98)); animation: vault-skeleton-in 360ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+.public-card-skeleton::after { position: absolute; inset: 0; transform: translateX(-120%); content: ""; background: linear-gradient(90deg, transparent, rgba(223, 195, 123, 0.08), transparent); animation: vault-loading-sheen 1.45s ease-in-out infinite; }
+.public-card-skeleton-thumb { aspect-ratio: 3 / 2; background: linear-gradient(135deg, rgba(201, 162, 75, 0.06), rgba(7, 6, 10, 0.78)), url("/manus-storage/mk-vault-fallback-tile_ac296a2d.jpg") center / cover; opacity: 0.58; }
+@keyframes vault-loading-sheen { to { transform: translateX(120%); } }
+@keyframes vault-skeleton-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.vault-seal-action { display: grid; place-items: center; border: 1px solid rgba(201, 162, 75, 0.72); border-radius: 999px; background: rgba(15, 12, 16, 0.92); box-shadow: 0 0 0 5px rgba(201, 162, 75, 0.055), 0 12px 26px rgba(0, 0, 0, 0.38); transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 160ms ease, background 160ms ease; }
+.vault-seal-action:hover { border-color: #e8590c; background: rgba(232, 89, 12, 0.1); }
+.vault-seal-action:active { transform: scale(0.94); }
+.vault-card-actions { opacity: 1; }
+@media (hover: hover) {
+  .vault-card:hover { transform: translateY(-4px); border-color: rgba(201, 162, 75, 0.62); box-shadow: 0 24px 42px rgba(0, 0, 0, 0.3), 0 0 22px rgba(232, 89, 12, 0.065); }
+  .vault-card:hover .vault-card-thumb img { transform: scale(1.045); }
+  .public-vault-card:hover { transform: translateY(-5px) rotate(-0.15deg); border-color: rgba(223, 195, 123, 0.8); box-shadow: 0 26px 48px rgba(0, 0, 0, 0.38), 0 0 28px rgba(223, 195, 123, 0.1); }
+  .public-vault-card:hover .public-card-visit { transform: translate(2px, -2px); color: #f1d98e; }
+  .vault-card-actions { opacity: 0; transform: translateY(-4px); transition: opacity 160ms ease, transform 160ms ease; }
+  .vault-card:hover .vault-card-actions, .vault-card:focus-within .vault-card-actions { opacity: 1; transform: translateY(0); }
+}
+.vault-stamp-in { animation: vault-stamp 390ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+@keyframes vault-stamp { 0% { opacity: 0; transform: translateY(-14px) scale(1.03); } 62% { opacity: 1; transform: translateY(2px) scale(0.985); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }

@@ -37,7 +37,7 @@ export type Project = {
 export type PublicProject = Pick<Project, "id" | "url" | "title" | "category" | "note" | "featuredRank">;
 
 export const categories: Category[] = ["Game", "Tool", "App", "Portfolio", "Other"];
-const seal = "/assets/mk-vault-seal.svg";
+const seal = "./assets/mk-vault-seal.svg";
 const STORAGE_KEY = "mk_vault_projects_v2";
 const AUTH_KEY = "mk_vault_admin_auth";
 const DEFAULT_PASSWORD = "mk-vault-2026";

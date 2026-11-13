@@ -1,5 +1,8 @@
 import { createRoot } from "react-dom/client";
-import { CloudflareVault } from "./CloudflareVault";
+import { VaultApp } from "./VaultApp";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(<CloudflareVault />);
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  createRoot(rootElement).render(<VaultApp />);
+}

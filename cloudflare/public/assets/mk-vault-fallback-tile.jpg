@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <radialGradient id="thumbBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1f1b26"/>
+      <stop offset="100%" stop-color="#0e0d13"/>
+    </radialGradient>
+    <pattern id="cardPattern" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="0.75" fill="#c9a24b" opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#thumbBg)"/>
+  <rect width="100%" height="100%" fill="url(#cardPattern)"/>
+  <rect x="20" y="20" width="560" height="360" fill="none" stroke="#c9a24b" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.2"/>
+</svg>
